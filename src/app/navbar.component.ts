@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthServiceService } from './auth-service.service';
 
 @Component({
   selector: 'app-navbar',
@@ -53,6 +54,27 @@ import { Component, OnInit } from '@angular/core';
                 >Users</a
               >
             </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                [routerLink]="['/registration']"
+                routerLinkActive="active"
+                >Registration</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                [routerLink]="['/login']"
+                routerLinkActive="active"
+                >Login</a
+              >
+            </li>
+            <li>
+              <button class="btn btn-primary" type="button" (click)="logout()">
+                Logout
+              </button>
+            </li>
           </ul>
         </div>
       </div>
@@ -61,7 +83,11 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class NavbarComponent implements OnInit {
-  constructor() {}
+  constructor(private authService: AuthServiceService) {}
 
   ngOnInit(): void {}
+
+  logout() {
+    this.authService.logout();
+  }
 }
