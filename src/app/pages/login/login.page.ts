@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthServiceService } from './auth-service.service';
+import { AuthService } from '../../auth.service';
 
 @Component({
   template: `
@@ -40,7 +40,7 @@ import { AuthServiceService } from './auth-service.service';
 })
 export class LoginPage implements OnInit {
   formLogin!: FormGroup;
-  constructor(private authService: AuthServiceService) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
     this.formLogin = new FormGroup({

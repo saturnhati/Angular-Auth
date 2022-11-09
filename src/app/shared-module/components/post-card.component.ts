@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Post } from '../models/post';
+import { Post } from '../../models/post';
 
 @Component({
   selector: 'app-post-card',
@@ -13,14 +13,13 @@ import { Post } from '../models/post';
       }"
       class="card mb-4"
     >
-      <h5 class="card-header"><span appHighlight >Post</span></h5>
+      <h5 class="card-header"><span appHighlight>Post</span></h5>
       <div class="card-body">
         <h5 class="card-title">{{ post.title | maiuscolo }}</h5>
         <p class="card-text">
           {{ post.body }}
         </p>
         <ng-content></ng-content>
-        
       </div>
     </div>
   `,

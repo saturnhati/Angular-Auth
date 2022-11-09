@@ -5,7 +5,7 @@ import { UsersService } from './users.service';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthServiceService {
+export class AuthService {
   constructor(private userService: UsersService, private router: Router) {}
 
   isLoggedIn: boolean = false;

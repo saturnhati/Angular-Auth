@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthServiceService } from './auth-service.service';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -70,12 +70,10 @@ import { AuthServiceService } from './auth-service.service';
                 >Login</a
               >
             </li>
-            <li>
-              <button class="btn btn-primary" type="button" (click)="logout()">
-                Logout
-              </button>
-            </li>
           </ul>
+          <button class="btn btn-primary" type="button" (click)="logout()">
+            Logout
+          </button>
         </div>
       </div>
     </nav>
@@ -83,7 +81,7 @@ import { AuthServiceService } from './auth-service.service';
   styles: [],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private authService: AuthServiceService) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
 
