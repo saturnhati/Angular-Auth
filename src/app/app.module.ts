@@ -8,6 +8,11 @@ import { SharedModule } from './shared-module/shared.module';
 
 const routes: Route[] = [
   {
+    path: '',
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomeModule),
+  },
+  {
     path: 'home',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomeModule),

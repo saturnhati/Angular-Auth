@@ -3,8 +3,18 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { InactivePostsPage } from './inactive-posts.page';
 import { SharedModule } from 'src/app/shared-module/shared.module';
+import { PostDetailsPage } from 'src/app/shared-module/post-details.page';
 
-const routes: Routes = [{ path: '', component: InactivePostsPage }];
+const routes: Routes = [
+  {
+    path: '',
+    component: InactivePostsPage,
+  },
+  {
+    path: ':id',
+    component: PostDetailsPage,
+  },
+];
 
 @NgModule({
   declarations: [InactivePostsPage],
